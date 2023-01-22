@@ -38,7 +38,7 @@ app.post('/api/unsplashclone', (req, res) => {
   const labelsForGCV: string[] = req.body.labels;
 
   //Demandons à unsplash API de nous fournir tous les images qui contient le mot clé keyword
-unsplash.search.getPhotos({query: keyword, perPage: 10}).then(async result => {
+unsplash.search.getPhotos({query: keyword, perPage: 30}).then(async result => {
   //Si Erreur
   if (result.errors)
     console.log('error occurred: ', result.errors[0]);
@@ -48,8 +48,8 @@ unsplash.search.getPhotos({query: keyword, perPage: 10}).then(async result => {
     const photos = result.response;
       
       //On enregistre les données reçu dans un nouveau fichier .json juste pour le flow
-    const newPhotosSaveFile = path.join(__dirname, "newPhotosSaveFile.json");
-    fs.writeFileSync(newPhotosSaveFile, JSON.stringify(photos, null, 2));
+      const newPhotosSaveFile = path.join(__dirname, "newPhotosSaveFile.json");
+      fs.writeFileSync(newPhotosSaveFile, JSON.stringify(photos, null, 2));
   
    //Pour chaque photo, on vérifie si dans ses labels on y trouve l'ensemble des labels donnés dedans
    for(let i: number = 0; i<photos.results.length; i++){
@@ -61,8 +61,10 @@ unsplash.search.getPhotos({query: keyword, perPage: 10}).then(async result => {
               const labels = results[0].labelAnnotations;
 
               //si de par "labels" on arrive à retrouver un label de labelForGCV, on incremente cpt de 1
-             await labels.forEach((label: { description: any; }) => labelsForGCV.includes(label.description) ? cpt++ : cpt = cpt );
-              //console.log(cpt)
+              await labels.forEach((label: { description: any; }) => labelsForGCV.map(l => l.toLowerCase()).includes(label.description.toLowerCase()) ? cpt++ : cpt = cpt );
+
+             
+             //console.log(cpt)
               
               //Si tous les labels se trouvent dans les labels d'un photo
              if(cpt === labelsForGCV.length){
@@ -77,10 +79,12 @@ unsplash.search.getPhotos({query: keyword, perPage: 10}).then(async result => {
                   linkResponseImage.push(photos.results[i].urls.raw)
                 }
 
-                //Là on a juste enregistrer les labels obtenu dans un fichier pour voir
-                const newImageLabelFile = path.join(__dirname, "newImageLabelFile.json");
-                fs.writeFileSync(newImageLabelFile, JSON.stringify(labelResponseImage, null, 2));
-             }
+              
+                    //Là on a juste enregistrer les labels obtenu dans un fichier pour voir
+                    const newImageLabelFile = path.join(__dirname, "newImageLabelFile.json");
+                    fs.writeFileSync(newImageLabelFile, JSON.stringify(labelResponseImage, null, 2));
+                  
+              }
           })   
       }
    
@@ -163,7 +167,6 @@ unsplash.search.getPhotos({query: "city", perPage: 10}).then(async result => {
       /*Pour le test de la réponse attendu
       On pourais essayer d'acceder à une valeur de "labelResponseImage" pour voir un label en réponse
       */
-
       /*
         console.log({
           "keyword": "city",
