@@ -8,7 +8,6 @@ const unsplash_js_1 = require("unsplash-js");
 const express_1 = __importDefault(require("express"));
 const path_1 = __importDefault(require("path"));
 const fs_1 = __importDefault(require("fs"));
-const test = require("./test");
 require("dotenv").config();
 global.fetch = cross_fetch_1.default;
 const app = (0, express_1.default)();
@@ -32,7 +31,7 @@ app.post('/api/unsplashclone', (req, res) => {
     //l'API Google Cloud Vision
     const labelsForGCV = req.body.labels;
     //Demandons à unsplash API de nous fournir tous les images qui contient le mot clé keyword
-    unsplash.search.getPhotos({ query: keyword, perPage: 10 }).then(async (result) => {
+    unsplash.search.getPhotos({ query: keyword, perPage: 30 }).then(async (result) => {
         //Si Erreur
         if (result.errors)
             console.log('error occurred: ', result.errors[0]);
@@ -52,12 +51,13 @@ app.post('/api/unsplashclone', (req, res) => {
                     .then(async (results) => {
                     const labels = results[0].labelAnnotations;
                     //si de par "labels" on arrive à retrouver un label de labelForGCV, on incremente cpt de 1
-                    await labels.forEach((label) => labelsForGCV.includes(label.description) ? cpt++ : cpt = cpt);
+                    await labels.forEach((label) => labelsForGCV.map(l => l.toLowerCase()).includes(label.description.toLowerCase()) ? cpt++ : cpt = cpt);
                     //console.log(cpt)
                     //Si tous les labels se trouvent dans les labels d'un photo
                     if (cpt === labelsForGCV.length) {
                         //Là on alimente dans ce cas notre tableau de label attendu à la fin
                         for (let j = 0; j < labels.length; j++) {
+                            //là je pourais vérifier si un label n'est pas déjà présent avant de l'ajouter avec un if comme pour les lien juste si après
                             labelResponseImage.push(labels[j].description);
                         }
                         //Là on alimente notre tableau d'image si toutefois le meme lien n'est pas encore présent; ça m'est arrivé de voir le meme lien
@@ -127,8 +127,10 @@ unsplash.search.getPhotos({query: "city", perPage: 10}).then(async result => {
                   labelResponseImage.push(labels[j].description)
                 }
 
-                //Là on alimente notre tableau d'image
-                linkResponseImage.push(photos.results[i].urls.raw)
+                //Là on alimente notre tableau d'image si toutefois le meme lien n'est pas encore présent; ça m'est arrivé de voir le meme lien
+                if(!linkResponseImage.includes(photos.results[i].urls.raw)){
+                  linkResponseImage.push(photos.results[i].urls.raw)
+                }
 
                 //Là on a juste enregistrer les labels obtenu dans un fichier pour voir
                 const newImageLabelFile = path.join(__dirname, "newImageLabelFile.json");

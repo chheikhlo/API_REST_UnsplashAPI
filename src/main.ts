@@ -4,7 +4,6 @@ import express, { query } from "express";
 import path from "path";
 import fs from "fs";
 
-const test = require("./test")
 require("dotenv").config();
 global.fetch = fetch;
 
