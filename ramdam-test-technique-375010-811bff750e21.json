@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "ramdam-375010",
+  "private_key_id": "811bff750e21bb7536fb51e69f22d267ce818f8b",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvwIBADANBgkqhkiG9w0BAQEFAASCBKkwggSlAgEAAoIBAQCyhAvtesHAY3Cq\n73ekpcvzIm9/Dtj1xwKHBxg62pixdeuEtinrvXfsargrH1fvcLTl2U7jmgnXbqpI\nALFmePRFnUopJT23FU/KiVBe2+9ly1GUi8iAeXsMdXKeC0KbTEaB+5Q9FqcQCLn5\nZc3mUUU26v67DjCGsE8WiAM4BjHk2F00jT5amXDaCaZQvSTpsLB4giBa0/o5MzFb\n9kThKu2I5H/N/Y95wP/1z7W+LY0s+iQsT37u4mFFIYsp2wP9/yswZ3BasXM6BkSM\n70xLY3p3kp5E0snVq3j0BqqWp6dFwh/xr60TTFqMzj+XaZWZx9C0XzTXuJSEPdZJ\nrVDyUtqlAgMBAAECggEATlwPHkmtxcUAnk/qXUAX09xwQ74hN1WJgvr2xFLTBsbD\nwKfzo9Kx0vmPaQJjp6t6BJDMg7TIkCO4JE4FkP0UAIDIHmKGAhkdQsLeoBz7q1vB\nripjsx1gCXp+euhnbuLe6kyj5+LLJ4slE1gANxLChpZFhZd3bo/yz2mZvBxgB1rD\nA8S68GyNTtMZihAz47ODXVJeSp7YttIU5eDgMx73SHcjdxkBdia15TT9aCkF559R\nb4ZLgalK3B8ySY7Og1T1lQ0oMOg9I9kkTEqLsOcdXga5h7JX50kLCvAzzGr9rPCR\n729illSAZ3B9NC9XoLsLoRiAr86Dgn8ZNpWgGe7VewKBgQDyAL4NLA4qbELDDnlj\nFdfcT91FtbPHmWvRPBJIbKcW61oa0KbuhnzgJ/RS04NnYb7/XAslZQ3A/TlHe/dh\noxcrTEk3hIFy7xrqpBRjPfITgkNmSHhOFGoTeOyf+AZMlr+vEVYuhCLeMscfPW/Z\nGWukq0PJgV0mza6pqf9/dsItKwKBgQC810WJgt/1sJ4a6m883E1FStcpxkA1a95k\nABsIxE9rh90OqdXlcIIVJyCsJincLRl4QFaMPGqGIdQIkNsIYnLGVAiIfYziIQMD\nHU1nd3v/l2lb2oVV2CTb693mgJSZ6mT1KK+nU+hhC7tGakO906J71L6fiACjjA+8\nPM3sihNPbwKBgQCJar6AgEmy8TKfzDJFf3vJkFgXY2wopQfCEhhXo8rlitLpcx23\nSArUxhtIhO6S38AzBLMXkuBSe/fwjYYVnSRk47aXndhbyUZBgtZI3D3/sfJPvEsE\nGzd4wyuqUo5RIzDJWlDTrRiXj8HeDWbbokGricy+OYUJqbXKhcudN3RfbQKBgQCy\nmyTgz5DFjtuq92podLD8xbFFiIW4QSLhEByBqTK4sJLKyKVO0Z+nJA/J4nqbDWjW\njHuPPaE+5gXmaCNSBdMqc9ZySdUTF0gDDRblsmPsNSfoQYD01W7fNnH1Dk3+WWxN\nV8LzDvBtwSvKiL0zcFRwrKHyvy5jgRhs4FGf1GQ5LwKBgQDj5VhPUQHGWC539CLl\nszvAeM1biL01J/VAkQMUVJUqn2eStJmuf7wTw1h3fOrRupt29sAQARy1lJnOJdMt\nj+X++K4us9DNDRisnLhy77ds4pDzd/w5/RS3RVOWzwvxd5nmUTUF/3j24AP1DhyB\ngJHWhCFk6rSp+o4P7rdEA1/x+A==\n-----END PRIVATE KEY-----\n",
+  "client_email": "test-technique@ramdam-375010.iam.gserviceaccount.com",
+  "client_id": "100745380371163914706",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/test-technique%40ramdam-375010.iam.gserviceaccount.com"
+}
