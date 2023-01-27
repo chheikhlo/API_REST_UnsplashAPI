@@ -1,7 +1,6 @@
 ﻿# UnsplashAPI
 
-## Développement d'une API REST basée sur le framework serveur ExpressJS en
-TypeScript. 
+## Développement d'une API REST basée sur le framework serveur ExpressJS en TypeScript. 
 
 * L'objectif de cette API est d'exposer une route dans laquelle l'utilisateur peut saisir un
 mot-clé pour trouver des images liées à ce mot-clé sur l'API Unsplash. Cette route renvoie les labels
