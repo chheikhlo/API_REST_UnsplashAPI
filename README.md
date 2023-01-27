@@ -1,6 +1,6 @@
 ﻿# UnsplashAPI
 
-##Développement d'une API REST basée sur le framework serveur ExpressJS en
+## Développement d'une API REST basée sur le framework serveur ExpressJS en
 TypeScript. 
 
 * L'objectif de cette API est d'exposer une route dans laquelle l'utilisateur peut saisir un
