@@ -3,11 +3,11 @@
 ##Développement d'une API REST basée sur le framework serveur ExpressJS en
 TypeScript. 
 
-*L'objectif de cette API est d'exposer une route dans laquelle l'utilisateur peut saisir un
+* L'objectif de cette API est d'exposer une route dans laquelle l'utilisateur peut saisir un
 mot-clé pour trouver des images liées à ce mot-clé sur l'API Unsplash. Cette route renvoie les labels
 trouvées sur les images renvoyées par Unsplash via l'API Google Cloud Vision et l'url de ces images.
 ____________________________________________________________________________________________________ 
- *Endpoint 
+ * Endpoint 
  
 Method: POST
 Path: /analyze
@@ -16,7 +16,7 @@ Body: {
   "labels": ["car", "building"]
 }
 _____________________________________________________________________________________________________
- *Response
+ * Response
 
 {
 "keyword": "city",
